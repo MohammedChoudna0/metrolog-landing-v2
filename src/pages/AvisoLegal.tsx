@@ -1,7 +1,9 @@
 import { useLang } from '../i18n/LanguageProvider'
+import usePageTitle from '../hooks/usePageTitle'
 
 export default function AvisoLegal() {
   const { t } = useLang()
+  usePageTitle(t.legal.avisoLegal)
 
   return (
     <div className="pt-24 pb-16 sm:pt-32 sm:pb-20">

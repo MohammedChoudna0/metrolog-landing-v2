@@ -6,26 +6,20 @@ export default function Footer() {
   const { t } = useLang()
 
   return (
-    <footer className="border-t border-[#E8E8ED]/50 bg-white">
-      <div className="max-w-6xl mx-auto px-6 sm:px-10 lg:px-12 py-14">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
-          <Link to="/" className="flex items-center">
-            <img src={logoSrc} alt="Metrolog" className="h-5 w-auto" />
+    <footer className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-10 py-10 border-t border-divider flex flex-wrap items-center justify-between gap-4">
+      <Link to="/" className="flex items-center">
+        <img src={logoSrc} alt="Metrolog" className="h-6 w-auto" />
+      </Link>
+
+      <nav className="flex flex-wrap gap-6">
+        {t.footer.links.map(link => (
+          <Link key={link.label} to={link.to} className="text-sm text-text/60 hover:text-mblue transition-colors">
+            {link.label}
           </Link>
+        ))}
+      </nav>
 
-          <nav className="flex flex-wrap items-center justify-center gap-6">
-            {t.footer.links.map(link => (
-              <Link key={link.label} to={link.to} className="text-xs text-gray-400 hover:text-gray-600 transition-colors">
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-        </div>
-
-        <div className="mt-10 pt-6 border-t border-[#E8E8ED]/50 text-center">
-          <p className="text-xs text-gray-400">&copy; {new Date().getFullYear()} Metrolog. {t.footer.rights}</p>
-        </div>
-      </div>
+      <span className="text-sm text-text/55">{t.footer.contactEmail} · &copy; {new Date().getFullYear()} Metrolog</span>
     </footer>
   )
 }
