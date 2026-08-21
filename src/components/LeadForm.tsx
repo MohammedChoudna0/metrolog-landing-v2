@@ -1,13 +1,14 @@
 import { type FormEvent, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useLang } from '../i18n/LanguageProvider'
 import Corners from './Corners'
 
-const FORM_ENDPOINT = 'https://formsubmit.co/contacto@metrolog.es'
+const FORM_ENDPOINT = 'https://formsubmit.co/ajax/contacto@metrolog.es'
 
 export default function LeadForm() {
   const { t } = useLang()
 
-  function validate(formData: Record<string, string>) {
+  function validate(formData: Record<string, string>, consent: boolean) {
     const errors: Record<string, string> = {}
     if (!formData.name.trim()) errors.name = t.validation.nameRequired
     if (!formData.email.trim()) {
@@ -15,11 +16,14 @@ export default function LeadForm() {
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       errors.email = t.validation.emailInvalid
     }
+    if (!consent) errors.consent = t.validation.consentRequired
     return errors
   }
 
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [sendError, setSendError] = useState(false)
+  const [consent, setConsent] = useState(false)
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [formData, setFormData] = useState({
     name: '',
@@ -27,6 +31,7 @@ export default function LeadForm() {
     phone: '',
     company: '',
     message: '',
+    _honey: '',
   })
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
@@ -41,29 +46,60 @@ export default function LeadForm() {
     }
   }
 
+  function handleConsentChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setConsent(e.target.checked)
+    if (errors.consent) {
+      setErrors(prev => {
+        const next = { ...prev }
+        delete next.consent
+        return next
+      })
+    }
+  }
+
   async function handleSubmit(e: FormEvent) {
     e.preventDefault()
-    const validationErrors = validate(formData)
+    const validationErrors = validate(formData, consent)
     setErrors(validationErrors)
     if (Object.keys(validationErrors).length > 0) return
 
-    setLoading(true)
-    try {
-      const fd = new FormData()
-      fd.append('name', formData.name)
-      fd.append('email', formData.email)
-      fd.append('phone', formData.phone)
-      fd.append('company', formData.company)
-      fd.append('message', formData.message)
-      fd.append('_captcha', 'false')
-      fd.append('_subject', 'Nuevo lead Metrolog Landing')
+    // Honeypot filled: silently drop (bot), fake success so it doesn't retry.
+    if (formData._honey) {
+      setSubmitted(true)
+      return
+    }
 
-      const res = await fetch(FORM_ENDPOINT, { method: 'POST', body: fd })
-      if (res.ok || res.status === 200) {
+    setLoading(true)
+    setSendError(false)
+    try {
+      const res = await fetch(FORM_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          company: formData.company,
+          message: formData.message,
+          _captcha: 'false',
+          _subject: 'Nuevo lead Metrolog Landing',
+          _honey: formData._honey,
+        }),
+      })
+      let ok = res.ok
+      try {
+        const data = await res.json()
+        if (data && data.success === 'false') ok = false
+      } catch {
+        // Non-JSON response: fall back to HTTP status.
+      }
+      if (ok) {
         setSubmitted(true)
+      } else {
+        setSendError(true)
       }
     } catch {
-      setSubmitted(true)
+      setSendError(true)
     } finally {
       setLoading(false)
     }
@@ -119,10 +155,39 @@ export default function LeadForm() {
               <textarea className="input" id="message" name="message" rows={3} value={formData.message} onChange={handleChange} placeholder={t.form.messagePlaceholder} />
             </div>
 
+            <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', height: 0, overflow: 'hidden' }}>
+              <label htmlFor="_honey">No rellenar</label>
+              <input tabIndex={-1} autoComplete="off" id="_honey" name="_honey" value={formData._honey} onChange={handleChange} />
+            </div>
+
+            <div className="field mb-6">
+              <label htmlFor="consent" className="flex items-start gap-2.5 cursor-pointer text-sm font-normal">
+                <input
+                  type="checkbox"
+                  id="consent"
+                  name="consent"
+                  checked={consent}
+                  onChange={handleConsentChange}
+                  className="mt-0.5 shrink-0 accent-[#53a3b4]"
+                />
+                <span>
+                  {t.form.consentBefore}
+                  <Link to="/politica-de-privacidad" className="underline hover:text-mblue transition-colors">{t.legal.politicaPrivacidad}</Link>
+                  {t.form.consentAfter}
+                </span>
+              </label>
+              {errors.consent && <p className="mt-1.5 text-xs" style={{ color: '#b3453a' }}>{errors.consent}</p>}
+            </div>
+
             <button type="submit" disabled={loading} className="btn btn-primary btn-block blueprint">
               <Corners />
               {loading ? '…' : t.form.submit}
             </button>
+            {sendError && (
+              <p className="mt-3 text-sm text-center" style={{ color: '#b3453a' }} role="alert">
+                {t.form.errorText}
+              </p>
+            )}
             <p className="mt-3 text-xs text-center text-text/60">{t.form.disclaimer}</p>
           </form>
         )}

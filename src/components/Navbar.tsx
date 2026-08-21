@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
-import { useLang, LanguageSwitcher } from '../i18n/LanguageProvider'
+import { useLang } from '../i18n/LanguageProvider'
 import Corners from './Corners'
 import logoSrc from '../assets/logoMenu.png'
 
@@ -50,8 +50,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center gap-4">
-            <LanguageSwitcher />
+          <div className="hidden md:flex items-center">
             <button
               type="button"
               className="btn btn-primary blueprint"
@@ -62,8 +61,7 @@ export default function Navbar() {
             </button>
           </div>
 
-          <div className="flex items-center gap-2 md:hidden">
-            <LanguageSwitcher />
+          <div className="flex items-center md:hidden">
             <button className="p-2 text-text/70 hover:text-mblue" onClick={() => setOpen(!open)} aria-label={t.nav.inicio}>
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {open ? (

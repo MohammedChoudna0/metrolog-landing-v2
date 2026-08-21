@@ -43,7 +43,7 @@ export default function Hero() {
 
       <figure className="blueprint duotone mt-16 sm:mt-20">
         <Corners />
-        <img src={inventarioSrc} alt={t.hero.imageAlt} className="w-full h-auto block" />
+        <img src={inventarioSrc} alt={t.hero.imageAlt} width={849} height={661} loading="eager" fetchPriority="high" className="w-full h-auto block" />
       </figure>
     </section>
   )

@@ -3,10 +3,12 @@ import Steps from '../components/Steps'
 import ProblemSolution from '../components/ProblemSolution'
 import Features from '../components/Features'
 import FAQ from '../components/FAQ'
-import Testimonial from '../components/Testimonial'
 import LeadForm from '../components/LeadForm'
+import usePageTitle from '../hooks/usePageTitle'
 
 export default function Home() {
+  usePageTitle()
+
   return (
     <>
       <Hero />
@@ -14,7 +16,6 @@ export default function Home() {
       <ProblemSolution />
       <Features />
       <FAQ />
-      <Testimonial />
       <LeadForm />
     </>
   )
