@@ -1,19 +1,21 @@
 import Hero from '../components/Hero'
 import Steps from '../components/Steps'
+import ProblemSolution from '../components/ProblemSolution'
 import Features from '../components/Features'
 import FAQ from '../components/FAQ'
+import Testimonial from '../components/Testimonial'
 import LeadForm from '../components/LeadForm'
-import BackToTop from '../components/BackToTop'
 
 export default function Home() {
   return (
     <>
       <Hero />
       <Steps />
+      <ProblemSolution />
       <Features />
       <FAQ />
+      <Testimonial />
       <LeadForm />
-      <BackToTop />
     </>
   )
 }
