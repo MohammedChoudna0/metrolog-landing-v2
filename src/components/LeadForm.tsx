@@ -1,6 +1,7 @@
 import { type FormEvent, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useLang } from '../i18n/LanguageProvider'
+import { SIGNUP_URL } from '../lib/appUrl'
 import Corners from './Corners'
 
 const FORM_ENDPOINT = 'https://formsubmit.co/ajax/contacto@metrolog.es'
@@ -114,6 +115,12 @@ export default function LeadForm() {
       <div className="max-w-xl mx-auto text-center">
         <h2 className="text-neutral-100 text-[28px] sm:text-[40px] mb-3">{t.cta.title}</h2>
         <p className="text-lg leading-relaxed text-accent-200">{t.cta.subtitle}</p>
+        <p className="mt-4 text-sm text-accent-200">
+          {t.form.orRegister}
+          <a href={SIGNUP_URL} className="underline text-neutral-100 hover:text-mblue transition-colors">
+            {t.form.orRegisterLink}
+          </a>
+        </p>
       </div>
 
       <div className="blueprint bg-bg text-text max-w-xl mx-auto mt-16 p-8">

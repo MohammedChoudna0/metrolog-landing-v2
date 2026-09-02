@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useLang } from '../i18n/LanguageProvider'
+import { LOGIN_URL, SIGNUP_URL } from '../lib/appUrl'
 import Corners from './Corners'
 import logoSrc from '../assets/logoMenu.png'
 
@@ -50,15 +51,14 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center">
-            <button
-              type="button"
-              className="btn btn-primary blueprint"
-              onClick={() => scrollTo('contacto', navigate, pathname)}
-            >
+          <div className="hidden md:flex items-center gap-4">
+            <a href={LOGIN_URL} className="text-sm text-text/70 hover:text-mblue transition-colors">
+              {t.nav.login}
+            </a>
+            <a href={SIGNUP_URL} className="btn btn-primary blueprint">
               <Corners />
               {t.nav.cta}
-            </button>
+            </a>
           </div>
 
           <div className="flex items-center md:hidden">
@@ -85,14 +85,13 @@ export default function Navbar() {
                 {link.label}
               </button>
             ))}
-            <button
-              type="button"
-              className="btn btn-primary btn-block blueprint mt-2"
-              onClick={() => { scrollTo('contacto', navigate, pathname); setOpen(false) }}
-            >
+            <a href={LOGIN_URL} className="block w-full text-left px-1 py-2 text-sm text-text/70 hover:text-mblue">
+              {t.nav.login}
+            </a>
+            <a href={SIGNUP_URL} className="btn btn-primary btn-block blueprint mt-2">
               <Corners />
               {t.nav.cta}
-            </button>
+            </a>
           </div>
         )}
       </div>

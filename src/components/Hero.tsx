@@ -1,4 +1,5 @@
 import { useLang } from '../i18n/LanguageProvider'
+import { SIGNUP_URL } from '../lib/appUrl'
 import Corners from './Corners'
 import inventarioSrc from '../assets/Inventario.webp'
 
@@ -22,14 +23,10 @@ export default function Hero() {
           {t.hero.subtitle}
         </p>
         <div className="flex gap-3 flex-wrap items-center">
-          <button
-            type="button"
-            className="btn btn-primary blueprint px-6! py-3! text-base!"
-            onClick={() => scrollTo('contacto')}
-          >
+          <a href={SIGNUP_URL} className="btn btn-primary blueprint px-6! py-3! text-base!">
             <Corners />
             {t.hero.cta}
-          </button>
+          </a>
           <button
             type="button"
             className="btn btn-ghost px-6! py-3! text-base!"
