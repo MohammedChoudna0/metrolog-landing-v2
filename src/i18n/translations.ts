@@ -85,17 +85,8 @@ const translationsEs = {
       { title: 'Certificados centralizados', description: 'Sube el PDF real que emite el laboratorio y vincúlalo al equipo. Descárgalo con un clic cuando lo necesites.' },
     ],
   },
-  security: {
-    kicker: '05 · Seguridad',
-    title: 'Tus datos, protegidos como se espera de un sistema de calidad',
-    items: [
-      { title: 'Sesiones seguras', description: 'Autenticación por token con renovación automática y revocación al cerrar sesión — sin contraseñas flotando en el aire.' },
-      { title: 'Datos aislados por empresa', description: 'Cada cuenta ve exclusivamente sus propios equipos y usuarios. Ningún cliente accede a los datos de otro.' },
-      { title: 'Control de acceso por rol', description: 'Los permisos se aplican en el servidor, no solo en la interfaz — un Operario no puede borrar equipos aunque manipule la URL.' },
-    ],
-  },
   faq: {
-    kicker: '06 · Preguntas frecuentes',
+    kicker: '05 · Preguntas frecuentes',
     title: 'Resuelve tus dudas',
     items: [
       {
@@ -281,17 +272,8 @@ const translationsEn: Translations = {
       { title: 'Certificados centralizados', description: 'Sube el PDF real que emite el laboratorio y vincúlalo al equipo. Descárgalo con un clic cuando lo necesites.' },
     ],
   },
-  security: {
-    kicker: '05 · Seguridad',
-    title: 'Your data, protected the way a quality system should be',
-    items: [
-      { title: 'Secure sessions', description: 'Token-based authentication with automatic renewal and revocation on logout — no passwords floating around.' },
-      { title: 'Data isolated per company', description: 'Each account sees only its own equipment and users. No customer can ever reach another\'s data.' },
-      { title: 'Server-enforced roles', description: 'Permissions are enforced on the server, not just the interface — an Operator can\'t delete equipment even by editing the URL.' },
-    ],
-  },
   faq: {
-    kicker: '06 · Preguntas frecuentes',
+    kicker: '05 · Preguntas frecuentes',
     title: 'Resuelve tus dudas',
     items: [
       {
@@ -471,17 +453,8 @@ const translationsFr: Translations = {
       { title: 'Certificados centralizados', description: 'Sube el PDF real que emite el laboratorio y vincúlalo al equipo. Descárgalo con un clic cuando lo necesites.' },
     ],
   },
-  security: {
-    kicker: '05 · Seguridad',
-    title: 'Tus datos, protegidos como se espera de un sistema de calidad',
-    items: [
-      { title: 'Sesiones seguras', description: 'Autenticación por token con renovación automática y revocación al cerrar sesión — sin contraseñas flotando en el aire.' },
-      { title: 'Datos aislados por empresa', description: 'Cada cuenta ve exclusivamente sus propios equipos y usuarios. Ningún cliente accede a los datos de otro.' },
-      { title: 'Control de acceso por rol', description: 'Los permisos se aplican en el servidor, no solo en la interfaz — un Operario no puede borrar equipos aunque manipule la URL.' },
-    ],
-  },
   faq: {
-    kicker: '06 · Preguntas frecuentes',
+    kicker: '05 · Preguntas frecuentes',
     title: 'Resuelve tus dudas',
     items: [
       {
@@ -661,17 +634,8 @@ const translationsDe: Translations = {
       { title: 'Certificados centralizados', description: 'Sube el PDF real que emite el laboratorio y vincúlalo al equipo. Descárgalo con un clic cuando lo necesites.' },
     ],
   },
-  security: {
-    kicker: '05 · Seguridad',
-    title: 'Tus datos, protegidos como se espera de un sistema de calidad',
-    items: [
-      { title: 'Sesiones seguras', description: 'Autenticación por token con renovación automática y revocación al cerrar sesión — sin contraseñas flotando en el aire.' },
-      { title: 'Datos aislados por empresa', description: 'Cada cuenta ve exclusivamente sus propios equipos y usuarios. Ningún cliente accede a los datos de otro.' },
-      { title: 'Control de acceso por rol', description: 'Los permisos se aplican en el servidor, no solo en la interfaz — un Operario no puede borrar equipos aunque manipule la URL.' },
-    ],
-  },
   faq: {
-    kicker: '06 · Preguntas frecuentes',
+    kicker: '05 · Preguntas frecuentes',
     title: 'Resuelve tus dudas',
     items: [
       {
