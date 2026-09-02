@@ -19,7 +19,18 @@ const translationsEs = {
     cta: 'Regístrate gratis',
     secondaryCta: 'Cómo funciona',
     trust: 'Sin compromiso, sin tarjeta de crédito.',
-    imageAlt: 'Panel de inventario de Metrolog, con calibres, estados y fechas de calibración',
+    imageAlt: 'Panorama de Metrolog Cloud: instrumentos vigentes, alertas de calibración y actividad reciente en tiempo real',
+  },
+  compliance: {
+    kicker: '01 · Cumplimiento',
+    title: 'Pensado para lo que te exige una auditoría ISO 9001',
+    intro: 'La Cláusula 7.1.5 de ISO 9001:2015 exige trazabilidad de tus recursos de seguimiento y medición: identificación única, calibración a intervalos definidos y protección frente a manipulaciones. Metrolog está construido alrededor de exactamente eso.',
+    items: [
+      { title: 'Identificación única', description: 'Cada equipo tiene un código, número de serie y responsable asignado — sin ambigüedad frente al auditor.' },
+      { title: 'Trazabilidad completa', description: 'Historial de calibraciones, incidencias y cambios de estado, con fecha y usuario, para cada instrumento.' },
+      { title: 'Alertas antes del vencimiento', description: 'El sistema avisa antes de que caduque una calibración, no después de la no conformidad.' },
+      { title: 'Certificados localizables al instante', description: 'El PDF del certificado va vinculado a cada equipo — lo encuentras en segundos frente al inspector.' },
+    ],
   },
   cta: {
     title: '¿Tienes necesidades específicas?',
@@ -32,7 +43,7 @@ const translationsEs = {
     consentRequired: 'Debes aceptar la política de privacidad',
   },
   steps: {
-    kicker: '01 · Cómo funciona',
+    kicker: '02 · Cómo funciona',
     title: 'Automatiza tu control en 3 pasos',
     items: [
       {
@@ -53,7 +64,7 @@ const translationsEs = {
     ],
   },
   problem: {
-    kicker: '02 · El problema',
+    kicker: '03 · El problema',
     title: 'Del caos de Excel al control total',
     todayKicker: 'Hoy',
     todayTitle: 'Excels y carpetas sueltas',
@@ -63,16 +74,28 @@ const translationsEs = {
     solutionText: 'Inventario, certificados y estados de calibración en un único sistema cloud. Trazabilidad forense y cero instalaciones: úsalo desde el móvil o la tablet, a pie de máquina.',
   },
   pilares: {
-    kicker: '03 · Por qué Metrolog',
+    kicker: '04 · Por qué Metrolog',
     title: 'El escudo anti-auditorías para el taller',
     items: [
       { title: 'Auditorías sin estrés', description: 'Trazabilidad forense y certificados siempre localizables, listos frente a cualquier inspector.' },
       { title: 'Avisos inteligentes', description: 'El sistema te avisa antes de que caduquen tus calibres, no después de la no conformidad.' },
-      { title: 'Optimizado para taller', description: 'Úsalo en cualquier tablet u ordenador de la empresa, a pie de máquina. Cero instalaciones.' },
+      { title: 'Optimizado para taller', description: 'Úsalo en cualquier tablet, móvil u ordenador de la empresa, a pie de máquina. Cero instalaciones.' },
+      { title: 'Código QR por equipo', description: 'Genera una etiqueta QR para cada instrumento. Escanéala con el móvil y accede a su ficha al instante.' },
+      { title: 'Roles y permisos reales', description: 'Jefe de Calidad, Operario o Auditor: cada perfil ve y edita solo lo que le corresponde — aplicado también en el servidor, no solo en la pantalla.' },
+      { title: 'Certificados centralizados', description: 'Sube el PDF real que emite el laboratorio y vincúlalo al equipo. Descárgalo con un clic cuando lo necesites.' },
+    ],
+  },
+  security: {
+    kicker: '05 · Seguridad',
+    title: 'Tus datos, protegidos como se espera de un sistema de calidad',
+    items: [
+      { title: 'Sesiones seguras', description: 'Autenticación por token con renovación automática y revocación al cerrar sesión — sin contraseñas flotando en el aire.' },
+      { title: 'Datos aislados por empresa', description: 'Cada cuenta ve exclusivamente sus propios equipos y usuarios. Ningún cliente accede a los datos de otro.' },
+      { title: 'Control de acceso por rol', description: 'Los permisos se aplican en el servidor, no solo en la interfaz — un Operario no puede borrar equipos aunque manipule la URL.' },
     ],
   },
   faq: {
-    kicker: '04 · Preguntas frecuentes',
+    kicker: '06 · Preguntas frecuentes',
     title: 'Resuelve tus dudas',
     items: [
       {
@@ -192,7 +215,18 @@ const translationsEn: Translations = {
     cta: 'Regístrate gratis',
     secondaryCta: 'How it works',
     trust: 'Sin compromiso, sin tarjeta de crédito.',
-    imageAlt: 'Panel de inventario de Metrolog, con calibres, estados y fechas de calibración',
+    imageAlt: 'Panorama de Metrolog Cloud: instrumentos vigentes, alertas de calibración y actividad reciente en tiempo real',
+  },
+  compliance: {
+    kicker: '01 · Cumplimiento',
+    title: 'Built for what an ISO 9001 audit actually asks for',
+    intro: 'Clause 7.1.5 of ISO 9001:2015 requires traceability of your monitoring and measuring resources: unique identification, calibration at defined intervals, and protection against tampering. Metrolog is built around exactly that.',
+    items: [
+      { title: 'Unique identification', description: 'Every piece of equipment has a code, serial number, and assigned owner — no ambiguity in front of an auditor.' },
+      { title: 'Full traceability', description: 'Calibration history, incidents, and status changes, timestamped and attributed to a user, for every instrument.' },
+      { title: 'Alerts before expiry', description: 'The system warns you before a calibration expires, not after the non-conformance.' },
+      { title: 'Certificates found instantly', description: 'The certificate PDF is linked to its equipment — find it in seconds in front of the inspector.' },
+    ],
   },
   cta: {
     title: '¿Tienes necesidades específicas?',
@@ -205,7 +239,7 @@ const translationsEn: Translations = {
     consentRequired: 'You must accept the privacy policy',
   },
   steps: {
-    kicker: '01 · Cómo funciona',
+    kicker: '02 · Cómo funciona',
     title: 'Automate your control in 3 steps',
     items: [
       {
@@ -226,7 +260,7 @@ const translationsEn: Translations = {
     ],
   },
   problem: {
-    kicker: '02 · El problema',
+    kicker: '03 · El problema',
     title: 'Del caos de Excel al control total',
     todayKicker: 'Hoy',
     todayTitle: 'Excels y carpetas sueltas',
@@ -236,16 +270,28 @@ const translationsEn: Translations = {
     solutionText: 'Inventario, certificados y estados de calibración en un único sistema cloud. Trazabilidad forense y cero instalaciones: úsalo desde el móvil o la tablet, a pie de máquina.',
   },
   pilares: {
-    kicker: '03 · Por qué Metrolog',
+    kicker: '04 · Por qué Metrolog',
     title: 'El escudo anti-auditorías para el taller',
     items: [
       { title: 'Auditorías sin estrés', description: 'Trazabilidad forense y certificados siempre localizables, listos frente a cualquier inspector.' },
       { title: 'Avisos inteligentes', description: 'El sistema te avisa antes de que caduquen tus calibres, no después de la no conformidad.' },
-      { title: 'Optimizado para taller', description: 'Úsalo en cualquier tablet u ordenador de la empresa, a pie de máquina. Cero instalaciones.' },
+      { title: 'Optimizado para taller', description: 'Úsalo en cualquier tablet, móvil u ordenador de la empresa, a pie de máquina. Cero instalaciones.' },
+      { title: 'Código QR por equipo', description: 'Genera una etiqueta QR para cada instrumento. Escanéala con el móvil y accede a su ficha al instante.' },
+      { title: 'Roles y permisos reales', description: 'Jefe de Calidad, Operario o Auditor: cada perfil ve y edita solo lo que le corresponde — aplicado también en el servidor, no solo en la pantalla.' },
+      { title: 'Certificados centralizados', description: 'Sube el PDF real que emite el laboratorio y vincúlalo al equipo. Descárgalo con un clic cuando lo necesites.' },
+    ],
+  },
+  security: {
+    kicker: '05 · Seguridad',
+    title: 'Your data, protected the way a quality system should be',
+    items: [
+      { title: 'Secure sessions', description: 'Token-based authentication with automatic renewal and revocation on logout — no passwords floating around.' },
+      { title: 'Data isolated per company', description: 'Each account sees only its own equipment and users. No customer can ever reach another\'s data.' },
+      { title: 'Server-enforced roles', description: 'Permissions are enforced on the server, not just the interface — an Operator can\'t delete equipment even by editing the URL.' },
     ],
   },
   faq: {
-    kicker: '04 · Preguntas frecuentes',
+    kicker: '06 · Preguntas frecuentes',
     title: 'Resuelve tus dudas',
     items: [
       {
@@ -359,7 +405,18 @@ const translationsFr: Translations = {
     cta: 'Regístrate gratis',
     secondaryCta: 'Fonctionnement',
     trust: 'Sin compromiso, sin tarjeta de crédito.',
-    imageAlt: 'Panel de inventario de Metrolog, con calibres, estados y fechas de calibración',
+    imageAlt: 'Panorama de Metrolog Cloud: instrumentos vigentes, alertas de calibración y actividad reciente en tiempo real',
+  },
+  compliance: {
+    kicker: '01 · Cumplimiento',
+    title: 'Pensado para lo que te exige una auditoría ISO 9001',
+    intro: 'La Cláusula 7.1.5 de ISO 9001:2015 exige trazabilidad de tus recursos de seguimiento y medición: identificación única, calibración a intervalos definidos y protección frente a manipulaciones. Metrolog está construido alrededor de exactamente eso.',
+    items: [
+      { title: 'Identificación única', description: 'Cada equipo tiene un código, número de serie y responsable asignado — sin ambigüedad frente al auditor.' },
+      { title: 'Trazabilidad completa', description: 'Historial de calibraciones, incidencias y cambios de estado, con fecha y usuario, para cada instrumento.' },
+      { title: 'Alertas antes del vencimiento', description: 'El sistema avisa antes de que caduque una calibración, no después de la no conformidad.' },
+      { title: 'Certificados localizables al instante', description: 'El PDF del certificado va vinculado a cada equipo — lo encuentras en segundos frente al inspector.' },
+    ],
   },
   cta: {
     title: '¿Tienes necesidades específicas?',
@@ -372,7 +429,7 @@ const translationsFr: Translations = {
     consentRequired: 'Vous devez accepter la politique de confidentialité',
   },
   steps: {
-    kicker: '01 · Cómo funciona',
+    kicker: '02 · Cómo funciona',
     title: 'Automatisez votre contrôle en 3 étapes',
     items: [
       {
@@ -393,7 +450,7 @@ const translationsFr: Translations = {
     ],
   },
   problem: {
-    kicker: '02 · El problema',
+    kicker: '03 · El problema',
     title: 'Del caos de Excel al control total',
     todayKicker: 'Hoy',
     todayTitle: 'Excels y carpetas sueltas',
@@ -403,16 +460,28 @@ const translationsFr: Translations = {
     solutionText: 'Inventario, certificados y estados de calibración en un único sistema cloud. Trazabilidad forense y cero instalaciones: úsalo desde el móvil o la tablet, a pie de máquina.',
   },
   pilares: {
-    kicker: '03 · Por qué Metrolog',
+    kicker: '04 · Por qué Metrolog',
     title: 'El escudo anti-auditorías para el taller',
     items: [
       { title: 'Auditorías sin estrés', description: 'Trazabilidad forense y certificados siempre localizables, listos frente a cualquier inspector.' },
       { title: 'Avisos inteligentes', description: 'El sistema te avisa antes de que caduquen tus calibres, no después de la no conformidad.' },
-      { title: 'Optimizado para taller', description: 'Úsalo en cualquier tablet u ordenador de la empresa, a pie de máquina. Cero instalaciones.' },
+      { title: 'Optimizado para taller', description: 'Úsalo en cualquier tablet, móvil u ordenador de la empresa, a pie de máquina. Cero instalaciones.' },
+      { title: 'Código QR por equipo', description: 'Genera una etiqueta QR para cada instrumento. Escanéala con el móvil y accede a su ficha al instante.' },
+      { title: 'Roles y permisos reales', description: 'Jefe de Calidad, Operario o Auditor: cada perfil ve y edita solo lo que le corresponde — aplicado también en el servidor, no solo en la pantalla.' },
+      { title: 'Certificados centralizados', description: 'Sube el PDF real que emite el laboratorio y vincúlalo al equipo. Descárgalo con un clic cuando lo necesites.' },
+    ],
+  },
+  security: {
+    kicker: '05 · Seguridad',
+    title: 'Tus datos, protegidos como se espera de un sistema de calidad',
+    items: [
+      { title: 'Sesiones seguras', description: 'Autenticación por token con renovación automática y revocación al cerrar sesión — sin contraseñas flotando en el aire.' },
+      { title: 'Datos aislados por empresa', description: 'Cada cuenta ve exclusivamente sus propios equipos y usuarios. Ningún cliente accede a los datos de otro.' },
+      { title: 'Control de acceso por rol', description: 'Los permisos se aplican en el servidor, no solo en la interfaz — un Operario no puede borrar equipos aunque manipule la URL.' },
     ],
   },
   faq: {
-    kicker: '04 · Preguntas frecuentes',
+    kicker: '06 · Preguntas frecuentes',
     title: 'Resuelve tus dudas',
     items: [
       {
@@ -526,7 +595,18 @@ const translationsDe: Translations = {
     cta: 'Regístrate gratis',
     secondaryCta: 'Funktionsweise',
     trust: 'Sin compromiso, sin tarjeta de crédito.',
-    imageAlt: 'Panel de inventario de Metrolog, con calibres, estados y fechas de calibración',
+    imageAlt: 'Panorama de Metrolog Cloud: instrumentos vigentes, alertas de calibración y actividad reciente en tiempo real',
+  },
+  compliance: {
+    kicker: '01 · Cumplimiento',
+    title: 'Pensado para lo que te exige una auditoría ISO 9001',
+    intro: 'La Cláusula 7.1.5 de ISO 9001:2015 exige trazabilidad de tus recursos de seguimiento y medición: identificación única, calibración a intervalos definidos y protección frente a manipulaciones. Metrolog está construido alrededor de exactamente eso.',
+    items: [
+      { title: 'Identificación única', description: 'Cada equipo tiene un código, número de serie y responsable asignado — sin ambigüedad frente al auditor.' },
+      { title: 'Trazabilidad completa', description: 'Historial de calibraciones, incidencias y cambios de estado, con fecha y usuario, para cada instrumento.' },
+      { title: 'Alertas antes del vencimiento', description: 'El sistema avisa antes de que caduque una calibración, no después de la no conformidad.' },
+      { title: 'Certificados localizables al instante', description: 'El PDF del certificado va vinculado a cada equipo — lo encuentras en segundos frente al inspector.' },
+    ],
   },
   cta: {
     title: '¿Tienes necesidades específicas?',
@@ -539,7 +619,7 @@ const translationsDe: Translations = {
     consentRequired: 'Sie müssen die Datenschutzerklärung akzeptieren',
   },
   steps: {
-    kicker: '01 · Cómo funciona',
+    kicker: '02 · Cómo funciona',
     title: 'Automatisieren Sie Ihre Kontrolle in 3 Schritten',
     items: [
       {
@@ -560,7 +640,7 @@ const translationsDe: Translations = {
     ],
   },
   problem: {
-    kicker: '02 · El problema',
+    kicker: '03 · El problema',
     title: 'Del caos de Excel al control total',
     todayKicker: 'Hoy',
     todayTitle: 'Excels y carpetas sueltas',
@@ -570,16 +650,28 @@ const translationsDe: Translations = {
     solutionText: 'Inventario, certificados y estados de calibración en un único sistema cloud. Trazabilidad forense y cero instalaciones: úsalo desde el móvil o la tablet, a pie de máquina.',
   },
   pilares: {
-    kicker: '03 · Por qué Metrolog',
+    kicker: '04 · Por qué Metrolog',
     title: 'El escudo anti-auditorías para el taller',
     items: [
       { title: 'Auditorías sin estrés', description: 'Trazabilidad forense y certificados siempre localizables, listos frente a cualquier inspector.' },
       { title: 'Avisos inteligentes', description: 'El sistema te avisa antes de que caduquen tus calibres, no después de la no conformidad.' },
-      { title: 'Optimizado para taller', description: 'Úsalo en cualquier tablet u ordenador de la empresa, a pie de máquina. Cero instalaciones.' },
+      { title: 'Optimizado para taller', description: 'Úsalo en cualquier tablet, móvil u ordenador de la empresa, a pie de máquina. Cero instalaciones.' },
+      { title: 'Código QR por equipo', description: 'Genera una etiqueta QR para cada instrumento. Escanéala con el móvil y accede a su ficha al instante.' },
+      { title: 'Roles y permisos reales', description: 'Jefe de Calidad, Operario o Auditor: cada perfil ve y edita solo lo que le corresponde — aplicado también en el servidor, no solo en la pantalla.' },
+      { title: 'Certificados centralizados', description: 'Sube el PDF real que emite el laboratorio y vincúlalo al equipo. Descárgalo con un clic cuando lo necesites.' },
+    ],
+  },
+  security: {
+    kicker: '05 · Seguridad',
+    title: 'Tus datos, protegidos como se espera de un sistema de calidad',
+    items: [
+      { title: 'Sesiones seguras', description: 'Autenticación por token con renovación automática y revocación al cerrar sesión — sin contraseñas flotando en el aire.' },
+      { title: 'Datos aislados por empresa', description: 'Cada cuenta ve exclusivamente sus propios equipos y usuarios. Ningún cliente accede a los datos de otro.' },
+      { title: 'Control de acceso por rol', description: 'Los permisos se aplican en el servidor, no solo en la interfaz — un Operario no puede borrar equipos aunque manipule la URL.' },
     ],
   },
   faq: {
-    kicker: '04 · Preguntas frecuentes',
+    kicker: '06 · Preguntas frecuentes',
     title: 'Resuelve tus dudas',
     items: [
       {

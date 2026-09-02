@@ -1,7 +1,7 @@
 import { useLang } from '../i18n/LanguageProvider'
 import { SIGNUP_URL } from '../lib/appUrl'
 import Corners from './Corners'
-import inventarioSrc from '../assets/Inventario.webp'
+import dashboardSrc from '../assets/Dashboard.webp'
 
 function scrollTo(id: string) {
   const el = document.getElementById(id)
@@ -40,7 +40,7 @@ export default function Hero() {
 
       <figure className="blueprint duotone mt-16 sm:mt-20">
         <Corners />
-        <img src={inventarioSrc} alt={t.hero.imageAlt} width={849} height={661} loading="eager" fetchPriority="high" className="w-full h-auto block" />
+        <img src={dashboardSrc} alt={t.hero.imageAlt} width={1400} height={875} loading="eager" fetchPriority="high" className="w-full h-auto block" />
       </figure>
     </section>
   )
